@@ -1,22 +1,32 @@
 {
     "configurations": [
         {
-            "name": "Android",
+            "name": "ARM64",
+            "compilerPath": "${env:NDK_PATH}/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe",
+            "compilerArgs": [
+                "--target=aarch64-linux-android24"
+            ],
             "includePath": [
-                "${workspaceFolder}/toolchain/stdincludes/horizon",
-                "${workspaceFolder}/toolchain/ndk/arm/sysroot/usr/include",
-                "${workspaceFolder}/toolchain/ndk/arm/include/c++/4.9.x/tr1",
-                "${workspaceFolder}/toolchain/ndk/arm/include/c++/4.9.x",
-                "${workspaceFolder}/toolchain/ndk/arm/lib/gcc/arm-linux-androideabi/4.9.x/include",
-                "${workspaceFolder}/toolchain/ndk/arm/include/c++/4.9.x/arm-linux-androideabi",
-                "${workspaceFolder}/toolchain/ndk/arm/sysroot/usr/include"
+                "${workspaceFolder}/**",
+                "${env:APPDATA}/icmtoolchain/stdincludes/horizon"
             ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
+            "cppStandard": "c++17",
+            "cStandard": "c11",
+            "intelliSenseMode": "linux-clang-arm64"
+        },
+        {
+            "name": "ARM32",
+            "compilerPath": "${env:NDK_PATH}/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe",
+            "compilerArgs": [
+                "--target=armv7a-linux-androideabi21"
             ],
-            "intelliSenseMode": "gcc-x64"
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${env:APPDATA}/icmtoolchain/stdincludes/horizon"
+            ],
+            "cppStandard": "c++17",
+            "cStandard": "c11",
+            "intelliSenseMode": "linux-clang-arm"
         }
     ],
     "version": 4

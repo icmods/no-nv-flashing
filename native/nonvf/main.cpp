@@ -31,6 +31,7 @@ public:
 					return duration > fadeTicks ? maxBrightness : duration * fadeRate;
 				}
 			}
+			return 0.0f;
 		}, ), HookManager::CALL | HookManager::LISTENER | HookManager::CONTROLLER | HookManager::RESULT);
     }
 	static float maxBrightness;
